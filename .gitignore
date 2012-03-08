@@ -1,0 +1,15 @@
+moose.*.pdf
+moose.*.mobi
+moose.*.epub
+moose.*.html
+moose.*.epub
+*.swp
+latex/*
+!latex/makepdf
+!latex/README
+!latex/template.tex
+!latex/config.yml
+epub/temp
+*~
+.#*
+figures/*

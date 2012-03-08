@@ -1,0 +1,26 @@
+Documentació del Curs de Perl: Moose
+====================================
+
+Aquest projecte és el codi de la documentació del tema
+sobre orientació a objectes amb Moose del Curs de Perl
+dels Perl Mongers de Barcelona (http://barcelona.pm).
+
+Requeriments
+------------
+
+    $ sudo apt-get install calibre pandoc \
+                           ruby rubygems ruby-dev \
+                           texlive-xetex texlive-latex-recommended
+    $ gem install --user-install ruby-debug rdiscount maruku
+    $ ./makepdfs
+
+Llicència
+---------
+
+Els fonts de la documentació d'aquest projecte es troben
+sota del directori amb el codi d'idioma (e.g. `ca`) i estan
+disponibles sota la mateixa llicència de Perl. La resta
+dels continguts deriven del codi per al fantàstic llibre
+___Pro Git___ d'en Scott Chacon, estan disponibles sota la
+llicència cc-by-nc-sa 3.0 (https://github.com/progit/progit).
+

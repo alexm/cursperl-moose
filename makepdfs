@@ -1,0 +1,26 @@
+#!/bin/bash
+
+baseDir=`dirname $0`
+outputDir=${baseDir}/pdf
+
+dirContent="ca"
+argString=""
+
+for dir in $dirContent; do
+	if [ -d "${baseDir}/${dir}" ]; then
+		argString="${argString} ${dir}"
+	fi
+done
+
+echo "Will generate pdf for the following languages:"
+echo "	"$argString
+
+mkdir -p $outputDir
+
+echo 
+echo "The generation process will start now."
+time ${baseDir}/latex/makepdf $argString
+
+echo
+echo
+echo "Done!"

@@ -1,0 +1,23 @@
+default:
+  babel: "catalan"
+  langrule: ""
+  font: Ubuntu
+  bold: "{* Bold}"
+  mono: Inconsolata
+  prechap: "Capítol "
+  postchap: ""
+  presect: "Secció "
+  postsect: ""
+  dql: "«"
+  dqr: "»"
+  con: "Índex"
+  fig: "Figura "
+  tab: "Taula "
+  indent: "\\qquad"
+  title: "Curs de Perl"
+  subtitle: "Moose"
+  comment: "(Orientació a Objectes)"
+  author: "Alex Muntada"
+  co-author: "<alexm@alexm.org>"
+  thanks: "\\emph{use Perl;}"
+  abstract: ""

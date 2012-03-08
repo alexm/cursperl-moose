@@ -1,0 +1,11 @@
+Versió en PDF
+=============
+
+Per a obtenir una versió PDF en català executeu `makepdf ca` i un fitxer
+`moose.ca.pdf` apareixerà a l'arrel del projecte.
+
+* `config.yml`: és un fitxer de configuració senzill per a personalitzar
+  el document generat.
+* `template.tex`: és el fitxer LaTeX principal, que determina l'estil de
+  la versió PDF del document. Es tracta d'una plantilla ERB que inclou les
+  personalitzacions de config.yml.
