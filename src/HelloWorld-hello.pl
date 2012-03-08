@@ -1,4 +1,4 @@
-use Modern::Perl '2012';
+use 5.014;
 
 package HelloWorld {
 
