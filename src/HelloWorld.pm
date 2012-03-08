@@ -1,6 +1,6 @@
-package HelloWorld {
-	use Modern::Perl;
+use Modern::Perl '2012';
 
+package HelloWorld {
 	require Exporter;
 
 	our @ISA       = qw( Exporter );

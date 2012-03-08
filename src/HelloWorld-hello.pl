@@ -1,5 +1,6 @@
+use Modern::Perl '2012';
+
 package HelloWorld {
-	use Modern::Perl;
 
 	sub hello {
 		say "Hello, world!";

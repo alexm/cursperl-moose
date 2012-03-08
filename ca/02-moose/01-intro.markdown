@@ -11,6 +11,7 @@ La base del sistema d'objectes són els mòduls (o paquets).
 ### Espai de noms ###
 
     Foo::Bar
+
     Foo/Bar.pm
 
 ### Cerca ###
@@ -21,7 +22,7 @@ La base del sistema d'objectes són els mòduls (o paquets).
 
     use lib '/path/to/lib';
 
-    @INC
+    our @INC;
 
 ### Quin aspecte tenen ###
 
@@ -41,9 +42,9 @@ A partir de Perl 5.14 ja es poden fer d'aquesta altra:
 
 ### Com s'utilitzen ###
 
-    package HelloWorld {
-        use Modern::Perl;
+    use Modern::Perl '2012';
 
+    package HelloWorld {
         sub hello {
             say "Hello, world!";
         }
@@ -58,9 +59,9 @@ A partir de Perl 5.14 ja es poden fer d'aquesta altra:
 
 Aquesta és la definció d'un mòdul menys senzill:
 
-    package HelloWorld {
-        use Modern::Perl;
+    use Modern::Perl '2012';
 
+    package HelloWorld {
         require Exporter;
 
         our @ISA       = qw( Exporter );

@@ -1,4 +1,4 @@
 use HelloWorld qw( japh );
 
-# hello();
+# hello(); => FAIL
 japh();
