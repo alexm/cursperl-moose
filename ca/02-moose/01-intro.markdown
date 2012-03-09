@@ -4,38 +4,55 @@ La base del sistema d'objectes són els mòduls (o paquets).
 
 ## Mòduls ##
 
-*   Reutilització
-*   Separació
+Com en qualsevol altre llenguatge permeten:
+
+*   reutilització
+*   separació
+*   encapsulament
 *   ...
 
 ### Espai de noms ###
 
-    Foo::Bar
-    Foo/Bar.pm
+    use Foo;
+    say $INC{'Foo.pm'};
+    # /path/to/lib/Foo.pm
+
+    use Foo::Bar;
+    say $INC{'Foo/Bar.pm'};
+    # /path/to/lib/Foo/Bar.pm
 
 ### On es busquen ###
 
-    $ perl -V
-    $ export PERL5LIB=/path/to/lib
-
     our @INC;
     use lib '/path/to/lib';
+
+    $ export PERL5LIB=/path/to/lib
+    $ perl -V
 
 ### Quin aspecte tenen ###
 
 Abans es feien d'aquesta manera:
 
     package HelloWorld;
+
+    # our $VERSION = '1.00';
+
+    use vars qw( $VERSION );
+    $VERSION = '1.00';
+
     # ...
+
     1;
 
 A partir de Perl 5.14 ja es poden fer d'aquesta altra:
 
     use 5.014;
 
-    package HelloWorld {
+    package HelloWorld 1.00 {
         # ...
     }
+
+    1;
 
 ### Com s'utilitzen ###
 
@@ -43,9 +60,9 @@ Llista 18333src:HelloWorld-hello.pl
 
 ### Com es defineixen ###
 
-Aquesta és la definció d'un mòdul menys senzill:
+Aquesta és la definició d'un mòdul més complex:
 
-Llista 18333src:HelloWorld.pm
+Llista 18333src:lib/1.00/HelloWorld.pm
 
 ### Crida a les funcions del mòdul ###
 
@@ -67,7 +84,8 @@ Llista 18333src:hello2.pl
 
 *   s'avalua en temps de compilació,
 *   només admet _barewords_ com a nom del mòdul,
-*   sense `eval` no es poden utilitzar variables pel nom.
+*   sense `eval` no es poden utilitzar variables pel nom,
+*   permet afegir una restricció de versió mínima del mòdul.
 
 ### use vs. no ###
 
@@ -85,9 +103,31 @@ Llista 18333src:hello2.pl
 
 ## Classes, mètodes i atributs ##
 
-Llista 18333src:HelloWorld.pm
+El mateix exemple d'abans...
+
+Llista 18333src:lib/1.00/HelloWorld.pm
+
+### Constructors, atributs, getters i setters ###
+
+Els objectes són en realitat referències:
+
+Llista 18333src:lib/1.01/HelloWorld.pm
+
+### Instàncies ###
+
+Llista 18333src:hello3.pl
 
 ## Herència ##
 
-Llista 18333src:HelloWorld.pm
+    package Baz {
+    	use parent qw( Foo Bar );
+    }
+
+    package Baz {
+    	BEGIN {
+        	require Foo;
+        	require Bar;
+        	push our @ISA, qw(Foo Bar);
+    	}
+    }
 

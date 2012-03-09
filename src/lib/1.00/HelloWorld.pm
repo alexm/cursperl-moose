@@ -1,9 +1,8 @@
 use 5.014;
 
-package HelloWorld {
-	require Exporter;
+package HelloWorld 1.00 {
+	use Exporter qw( import );
 
-	our @ISA       = qw( Exporter );
 	our @EXPORT    = qw( hello );
 	our @EXPORT_OK = qw( japh );
 
