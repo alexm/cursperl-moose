@@ -77,8 +77,72 @@ Llista 18333src:hello6.pl
 Llista 18333src:report.pl
 
 ## Subtipus i coercions ##
+
+Llista 18333src:foo.pl
+
 ## Rols i trets ##
+
+
 ## Delegació ##
+
+Importa mètodes d'un atribut sense crear una relació d'herència o composició de rols:
+
+    package Website {
+        use Moose;
+
+        has 'uri'   => (
+            is      => 'ro',
+            isa     => 'URI',
+            handles => [qw( host path )],
+        );
+    }
+
 ## Constructors i destructors ##
+
+Compte! No definiu cap mètode `new` ni `DESTROY`. Disposeu d'aquests mecanismes:
+
+*   `BUILDARGS` abans de crear l'objecte.
+*   `BUILD` després de crear l'objecte.
+*   `DEMOLISH` durant la destrucció de l'objecte.
+
 ## Protocol de meta-objectes i immutabilitat ##
+
+Tota aquest màgia és possible gràcies al MOP:
+
+    my $meta = User->meta();
+       
+    for my $attribute ( $meta->get_all_attributes ) {
+        print $attribute->name(), "\n";
+
+        if ( $attribute->has_type_constraint ) {
+            print "  type: ", $attribute->type_constraint->name, "\n";
+        }
+    }
+         
+    for my $method ( $meta->get_all_methods ) {
+        print $method->name, "\n";
+    }
+
+Per optimitzar l'execució i per evitar que una classe canviï:
+
+    __PACKAGE__->meta->make_immutable;
+
 ## Extensions de Moose ##
+
+Algunes de les extensions recomanades a `Moose::Manual::MooseX`:
+
+*   `Moose::Autobox`
+*   `MooseX::StrictConstructor`
+*   `MooseX::Params::Validate`
+*   `MooseX::Getopt`
+*   `MooseX::Singleton`
+
+Altres extensions interessants:
+
+*   `MooseX::Declare`
+*   `MooseX::ClassAttribute`
+*   `MooseX::Daemonize`
+*   `MooseX::Role::Parameterized`
+*   `MooseX::SemiAffordanceAccessor`
+*   `MooseX::NonMoose`
+
