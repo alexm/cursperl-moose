@@ -84,4 +84,10 @@ Llista 18333src:hello2.pl
     BEGIN { require Module; Module->unimport( LIST ); }
 
 ## Classes, mètodes i atributs ##
+
+Llista 18333src:HelloWorld.pm
+
 ## Herència ##
+
+Llista 18333src:HelloWorld.pm
+
