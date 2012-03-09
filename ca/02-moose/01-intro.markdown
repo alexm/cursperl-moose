@@ -42,54 +42,21 @@ A partir de Perl 5.14 ja es poden fer d'aquesta altra:
 
 ### Com s'utilitzen ###
 
-    use 5.014;
-
-    package HelloWorld {
-        sub hello {
-            say "Hello, world!";
-        }
-    }
-        
-    # package main {
-        HelloWorld::hello();
-    # }
-
+Llista 18333src:HelloWorld-hello.pl
 
 ### Com es defineixen ###
 
 Aquesta és la definció d'un mòdul menys senzill:
 
-    use 5.014;
-
-    package HelloWorld {
-        require Exporter;
-
-        our @ISA       = qw( Exporter );
-        our @EXPORT    = qw( hello );
-        our @EXPORT_OK = qw( japh );
-
-        sub hello {
-            say "Hello, world!";
-        }
-
-        sub japh {
-            say "Just another Perl hacker,";
-        }
-    }
+Llista 18333src:HelloWorld.pm
 
 ### Crida a les funcions del mòdul ###
 
-    use HelloWorld;
-
-    hello();
-    HelloWorld::japh();
+Llista 18333src:hello1.pl
 
 ### Importació de símbols ###
 
-    use HelloWorld qw( japh );
-
-    # hello(); => FAIL
-    japh();
+Llista 18333src:hello2.pl
 
 ### require vs. use ###
 

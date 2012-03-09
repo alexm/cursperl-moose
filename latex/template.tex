@@ -14,6 +14,7 @@
 \usepackage{indentfirst}
 \usepackage{framed,color}
 \usepackage{array}
+\usepackage{listings}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[<%= config['babel'] %>]{babel}
 
@@ -26,6 +27,23 @@
 <%= config['langrule'] %>
 
 \settowidth{\parindent}{<%= config['indent'] %>}
+
+\def\lstlistingname{Llistat}
+\def\lstlistlistingname{Llistats}
+
+\lstset{
+  language=Perl,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\bfseries,
+  tabsize=4,
+  showstringspaces=false,
+  stepnumber=1,
+  captionpos=b,
+  framexleftmargin=5mm,
+  frame=shadowbox,
+  rulesepcolor=\color{black},
+%  backgroundcolor=\color{lightyellow},
+}
 
 \title{<%= config['title'] %>}
 \author{<%= config['author'] %>}

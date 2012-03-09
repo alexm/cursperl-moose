@@ -67,6 +67,9 @@ def pre_pandoc(string, config)
 
 		# Process figures
 		s /Insereix\s18333fig\d+\.png\s*\n.*?\d{1,2}-\d{1,2}\. (.*)/, 'FIG: \1'
+
+		# Process listings
+		s /Llista\s18333src:\s*(.*)/, 'SRC: \1'
 	end
 end
 
@@ -102,10 +105,12 @@ def post_pandoc(string, config)
 
 		# Ensure monospaced stuff is in a smaller font
 		s /(\\verb(\W).*?\2)/, '{\footnotesize\1}'
-		s /(\\begin\{verbatim\}.*?\\end\{verbatim\})/m, '{\footnotesize\1}'
 
 		# Shaded verbatim block
-		s /(\\begin\{verbatim\}.*?\\end\{verbatim\})/m, '\begin{shaded}\1\end{shaded}'
+		s /\\begin\{verbatim\}(.*?)\\end\{verbatim\}/m, '\begin{lstlisting}\1\end{lstlisting}'
+
+		# Code listing block
+		s /SRC: (.*)/, "\\lstinputlisting[caption={\\1}]{#$root/src/\\1}"
 	end
 end
 
