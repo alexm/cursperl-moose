@@ -13,7 +13,7 @@ default:
   con: "Índex"
   fig: "Figura "
   tab: "Taula "
-  indent: "\\qquad"
+  indent: ""
   title: "Curs de Perl"
   subtitle: "Moose"
   comment: "(Orientació a Objectes)"
