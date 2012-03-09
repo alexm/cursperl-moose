@@ -11,7 +11,6 @@ La base del sistema d'objectes són els mòduls (o paquets).
 ### Espai de noms ###
 
     Foo::Bar
-
     Foo/Bar.pm
 
 ### On es busquen ###
@@ -27,9 +26,7 @@ La base del sistema d'objectes són els mòduls (o paquets).
 Abans es feien d'aquesta manera:
 
     package HelloWorld;
-
     # ...
-
     1;
 
 A partir de Perl 5.14 ja es poden fer d'aquesta altra:
@@ -74,20 +71,16 @@ Llista 18333src:hello2.pl
 
 ### use vs. no ###
 
-`use Module;`
-
+    # use Module;
     BEGIN { require Module; Module->import(); }
 
-`use Module ();`
-
+    # use Module ();
     BEGIN { require Module; }
 
-`use Module LIST;`
-
+    # use Module LIST;
     BEGIN { require Module; Module->import( LIST ); }
 
-`no Module LIST;`
-
+    # no Module LIST;
     BEGIN { require Module; Module->unimport( LIST ); }
 
 ## Classes, mètodes i atributs ##
