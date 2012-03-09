@@ -1,4 +1,5 @@
 use 5.014;
+use Modern::Perl '2012';
 
 package HelloWorld 1.01 {
 	use Carp qw( croak );
@@ -18,13 +19,13 @@ package HelloWorld 1.01 {
 	sub hello {
 		my $self = shift;
 
-		say $self->{hello};
+		return @_ ? $self->set_hello(@_) : $self->get_hello();
 	}
 
 	sub japh {
 		my $self = shift;
 
-		say $self->{japh};
+		return @_ ? $self->set_japh(@_) : $self->get_japh();
 	}
 
 	sub AUTOLOAD {
@@ -42,7 +43,7 @@ package HelloWorld 1.01 {
 			my $old_value = $self->{$1};
 			$self->{$1}   = $new_value;
 
-			return $old_value;
+			return $new_value;
 		}
 		else {
 			croak "Bad method name <$method>!";

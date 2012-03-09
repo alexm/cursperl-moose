@@ -47,6 +47,7 @@ Abans es feien d'aquesta manera:
 A partir de Perl 5.14 ja es poden fer d'aquesta altra:
 
     use 5.014;
+    use Modern::Perl '2012';
 
     package HelloWorld 1.00 {
         # ...
@@ -117,7 +118,14 @@ Llista 18333src:lib/1.01/HelloWorld.pm
 
 Llista 18333src:hello3.pl
 
+### Accessors ###
+
+Llista 18333src:hello4.pl
+
 ## Herència ##
+
+    use 5.014;
+    use Modern::Perl '2012';
 
     package Baz {
     	use parent qw( Foo Bar );

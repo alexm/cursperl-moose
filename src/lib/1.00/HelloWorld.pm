@@ -1,4 +1,5 @@
 use 5.014;
+use Modern::Perl '2012';
 
 package HelloWorld 1.00 {
 	use Exporter qw( import );
@@ -7,10 +8,12 @@ package HelloWorld 1.00 {
 	our @EXPORT_OK = qw( japh );
 
 	sub hello {
-		say "Hello, world!";
+		return "Hello, world!";
 	}
 
 	sub japh {
-		say "Just another Perl hacker,";
+		return "Just another Perl hacker,";
 	}
 }
+
+1;

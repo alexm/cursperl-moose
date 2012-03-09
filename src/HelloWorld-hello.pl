@@ -1,11 +1,12 @@
 use 5.014;
+use Modern::Perl '2012';
 
 package HelloWorld {
 	sub hello {
-		say "Hello, world!";
+		return "Hello, world!";
 	}
 }
 						        
 # package main {
-	HelloWorld::hello();
+	say HelloWorld::hello();
 # }
