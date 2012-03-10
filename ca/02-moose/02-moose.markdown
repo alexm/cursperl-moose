@@ -82,6 +82,31 @@ Llista 18333src:foo.pl
 
 ## Rols i trets ##
 
+### Per què? ###
+
+*   Objectes: què és el sistema.
+    *   Com són els objectes.
+    *   El model de dades és estable.
+    *   Habitualment és necessari documentar-lo.
+*   Rols: què fa el sistema.
+    *   La lògica de negoci és canviable en el temps.
+    *   Facilita la creació de tests.
+    *   Eviten documentar els algorismes, el codi és la documentació.
+    *   Els trets a Moose són rols composats en temps d'execució.
+*   Vistes: interacció amb els usuaris.
+    *   Diferents dispositius tenen entrades i sortides diferents.
+    *   Aspectes diversos: presentació, blog, llibre, etc.
+    *   Formats de sortida: HTML, text, ODT, PDF, etc.
+
+### Composició de rols ###
+
+Llista 18333src:lib/2.02/HelloWorld.pm
+
+Llista 18333src:lib/2.02/Pet.pm
+
+Llista 18333src:lib/2.02/Cat.pm
+
+Llista 18333src:hello7.pl
 
 ## Delegació ##
 

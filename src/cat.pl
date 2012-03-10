@@ -16,7 +16,7 @@ package Cat {
 	extends 'Pet';
 
 	has 'diet' => (
-		is => 'rw',
+		is  => 'rw',
 		isa => 'Str',
        	);
 
