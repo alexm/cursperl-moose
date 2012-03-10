@@ -15,3 +15,23 @@ Debat sobre les propostes:
 *   Punts forts i punts febles.
 *   Alternatives.
 
+## Solució senzilla ##
+
+Una classe `Doc` que composa el rol `HTML`.
+
+### Composició estàtica de rols ###
+
+Llista 18333src:lib/3.00/HTML.pm
+
+Llista 18333src:lib/3.00/Doc.pm
+
+Llista 18333src:doc1.pl
+
+### Composició dinàmica de rols ###
+
+Llista 18333src:lib/3.01/HTML.pm
+
+Llista 18333src:lib/3.01/Doc.pm
+
+Llista 18333src:doc2.pl
+
